@@ -8,6 +8,9 @@ reportpath = os.path.join('analysis', 'budget_resport.txt')
 # defined variables
 totalmonths = 0
 net_total = 0
+average_change = 0
+greatest_in = 0
+greatest_dec = 0
 
 
 with open(csvpath) as csvfile:
@@ -43,6 +46,11 @@ Output = (
     f"\n"
     f"Total Months: {totalmonths}\n"
     f"Net Total: ${net_total}\n"
+    f"Average Change: {average_change}\n"
+    f"Greatest Increase in Profits: {greatest_in}\n"
+    f"Greatest Decrease in Profits: {greatest_dec}\n"
+    
+
 
 ) 
 print(Output)
