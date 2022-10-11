@@ -26,12 +26,6 @@ with open(csvpath) as csvfile:
         net_total += int(row[1])
 
 
-# # total number of months included in the dataset
-#print(totalmonths)
-
-# #def print_months(month):
-# # net total amount of "profit/losses" over the entire period
-# #total_months = str(date[0])
 # #i + with a four loop
 # #only have profit change for 85 of the months
 
