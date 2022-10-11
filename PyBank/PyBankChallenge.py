@@ -1,38 +1,45 @@
 import os
 import csv
 
-# path to collect data from the Resources folder
+# Path to collect data from file
 csvpath = os.path.join('Resources', 'budget_data.csv')
+
+# Path for output text file
 reportpath = os.path.join('analysis', 'budget_resport.txt')
 
-# defined variables
+# Defined variables
 totalmonths = 0
 net_total = 0
 average_change = 0
-greatest_in = 0
-greatest_dec = 0
+total = []
+previous_total = 0
+monthchange = []
+total_change = []
+greatest_in = ["",0]
+greatest_dec = ["", 9999999]
+total_change_list = []
 
-
+# Open the csv file
 with open(csvpath) as csvfile:
 
     csvreader = csv.reader(csvfile)
     csv_header = next(csvreader)
-   # print(f"CSV Header: {csv_header}")
-
+  
+# Loop through to find total months
     for row in csvreader:
+        # Count total months
         totalmonths += 1
 
-        # add total months
+        # Average change between months
         net_total += int(row[1])
 
+        # Average change of total between months over the entire period
+        average_change = float(row[0]-previous_total)
+        previous_total = float(row [1])
+        total_change_list = total_change_list + [average_change]
+        monthchange = [monthchange] + [row[1]]
 
-# #i + with a four loop
-# #only have profit change for 85 of the months
 
-# # changes in "profit/losses" over the entire period, including average of those changes
-# #profit_loss = 
-# #net_total = [total_months]
-# # greatest increase in profits (date/amount) over the entire period
 
 Output = (
     f"Financial Analysis \n"
