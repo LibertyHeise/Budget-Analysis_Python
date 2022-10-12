@@ -39,10 +39,11 @@ Output = (
     f"\n"
     f"Winner: {popularvote}")
 f"----------------------------\n"
-')'
+
+
 
 print(Output)
 
 # save results to analysis folder
-with open(election_data_csv, "w") as election_output.txt:
-    election_output.txt.write(Output)
+with open(text_path, "w") as txtfile:
+    txtfile.write(Output)
