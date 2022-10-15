@@ -30,11 +30,11 @@ with open(csvpath) as csvfile:
         # Count total months
         totalmonths += 1
 
-        # # Average change between months
-        # net_total += int(row[1])
+        # Average change between months
+        net_total += int(row[1])
 
-        # # Average change of total between months over the entire period
-        average_change = float(row[0]-previous_total)
+        # Average change of total between months over the entire period
+        average_change =(int(row[1]) - previous_total)
         previous_total = float(row [1])
         total_change_list = total_change_list + [average_change]
         monthchange = [monthchange] + [row[1]]
