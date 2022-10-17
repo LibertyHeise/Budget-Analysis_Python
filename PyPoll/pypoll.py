@@ -9,9 +9,12 @@ election_data_csv = os.path.join('Resources', 'election_data.csv')
 text_path = os.path.join('analysis', 'election_output.txt')
 
 # Set variables
+# Total votes counter
 totalvotes = 0
-popularvote = 0
 
+# Candidate Options and Vote Counters
+candidate_opt = []
+candidate_votes = {}
 
 # The total number of votes cast
 
