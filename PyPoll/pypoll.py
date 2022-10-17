@@ -3,22 +3,36 @@ import os
 import csv
 
 # Set path for file
-election_data_csv = os.path.join('Resources', 'election_data.csv')
+csv_path = os.path.join('Resources', 'election_data.csv')
 
 # Set the output of the text file
 text_path = os.path.join('analysis', 'election_output.txt')
 
+#Open CSV as Reader
+with open(csv_path) as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter = ",")
+    csv_header = next(csv_file)
+    print(f"Header:{csv_header}")
+    output.write(f"Header:{csv_header}\n")
+
 # Set variables
-# Total votes counter
-totalvotes = 0
+votes = 0
+total_votes_cast = 0
+candidate_s = []
+candidate_wins = {}
+winning_can = ""
+winning_count = 0
 
-# Candidate Options and Vote Counters
-candidate_opt = []
-candidate_votes = {}
 
-# The total number of votes cast
+#Total votes cast
+for row in csv_reader:
+    votes +=1
 
-# A complete list of candidates who received votes
+# A complete list of candidates who received votes and the total number of votes won by candidate
+    if row[2] not in candidate_s:
+        candidate_s.append(row[2])
+        numberwon [row[2]] = 0
+    numberwon [row[2]]+= 1
 
 # The percentage of votes each candidate won
 
