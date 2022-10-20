@@ -3,11 +3,12 @@ import os
 import csv
 
 # Set path for file
-csv_path = os.path.join('Resources', 'election_data.csv')
+
+csv_path = os.path.join('PyPoll', 'Resources', 'election_data.csv')
 
 # Set the output of the text file
-text_path = os.path.join('analysis', 'election_output.txt')
-
+text_path = os.path.join('PyPoll', 'analysis', 'election_output.txt')
+print(os.getcwd())
 #Open CSV as Reader
 with open(csv_path) as csv_file:
     csv_reader = csv.reader(csv_file, delimiter = ",")
@@ -65,6 +66,7 @@ Output = (
     f"----------------------------\n" 
 ) 
 print(Output)
+
 
 # save results to Resources folder
 with open(text_path, "w") as txtfile:
