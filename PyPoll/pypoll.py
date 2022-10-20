@@ -33,9 +33,8 @@ with open(csv_path) as csv_file:
             candidate_s.append(row[2])
             candidate_wins[row[2]]=1
            
-
     # The percentage of votes each candidate won
-
+        else candidate_wins[row[2]]= value+1
     # The total number of votes each candidate won
 
     # The winner of the election based on popular vote
