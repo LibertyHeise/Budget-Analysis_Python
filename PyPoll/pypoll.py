@@ -32,34 +32,32 @@ with open(csv_path) as csv_file:
         if row[2] not in candidate_s:
             candidate_s.append(row[2])
             candidate_wins[row[2]]=1
-           
-    # The percentage of votes each candidate won
-        else candidate_wins[row[2]]= value+1
+        else:
+            candidate_wins[row[2]] = candidate_wins[row[2]] + 1
     # The total number of votes each candidate won
-
     # The winner of the election based on popular vote
-
     # Format for outputs
+for i in range(len(candidate_s)):
+    if winning_count < candidate_wins[candidate_s[i]]:
+        winning_can = candidate_s[i]
+        winning_count = candidate_wins[candidate_s[i]]
+# Display Election Results Information
+print("Election Results")
+print("----------------------------")
+print(f"Total Votes: {votes}")
+print("----------------------------")
+# Loop each Candidate and display their specific voting information
+for i in range(len(candidate_s)):
+    print(f"{candidate_s[i]}: {candidate_wins[candidate_s[i]] / votes * 100:2.3f}% ({candidate_wins[candidate_s[i]]})")
+print("----------------------------")
+print(f"Winner: {winning_can}")
+print("----------------------------")
 
-    Output = (
-        f"Election Results \n"
-        f"----------------------------\n"
-        f"\n"
-        f"Total Votes: {totalvotes}\n"
-        f"----------------------------\n"
-        f"\n"    
-
-
-
-        f"----------------------------\n"
-        f"\n"
-        f"Winner: {popularvote}")
-    f"----------------------------\n"
-
-
-
-    print(Output)
-
-    # save results to analysis folder
-    with open(text_path, "w") as txtfile:
-        txtfile.write(Output)
+#save results to analysis folder
+# Set the output of the text file
+text_path = os.path.join('analysis', 'election_output.txt')
+with open (text_path, "w") as file:
+    file.write("Election Results"\n)
+    file.write("----------------------------")
+    file.write("Total Votes: {votes}")
+    file.write("----------------------------")
