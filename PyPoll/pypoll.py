@@ -53,11 +53,19 @@ print("----------------------------")
 print(f"Winner: {winning_can}")
 print("----------------------------")
 
-#save results to analysis folder
-# Set the output of the text file
-text_path = os.path.join('analysis', 'election_output.txt')
-with open (text_path, "w") as file:
-    file.write("Election Results"\n)
-    file.write("----------------------------")
-    file.write("Total Votes: {votes}")
-    file.write("----------------------------")
+
+# Format for outputs
+Output = (
+    f"Election Results \n"
+    f"----------------------------\n"
+    f"\n"
+    f"Total Votes: {votes}\n"
+    f"----------------------------\n"
+    f"Winner: {winning_can}\n"
+    f"----------------------------\n" 
+) 
+print(Output)
+
+# save results to Resources folder
+with open(text_path, "w") as txtfile:
+    txtfile.write(Output)
